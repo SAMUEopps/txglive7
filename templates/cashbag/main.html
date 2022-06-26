@@ -1,0 +1,14 @@
+{% extends "cashbag/index.html" %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+   {% include "cashbag/navbar.html" %}
+   {{request.user}}
+{% else %}
+
+<a href="{% url 'register' %}">
+	<button class="btn btn-primary">Create an account</button>
+</a>
+{% endif %}
+{% endblock %}
